@@ -8,9 +8,9 @@ import { createJsonFile } from "../controller/CreateJsonFile.controller.js";
 
 router.route("/getjson").post(
   uplaod.fields([
-    { name: "bill_detail", maxCount: 1 },
-    { name: "final_bills", maxCount: 1 },
-    { name: "pharmacy", maxCount: 1 },
+    { name: "page1", maxCount: 1 },
+    { name: "page2", maxCount: 1 },
+    { name: "page3", maxCount: 1 },
   ]),
   createJsonFile
 );

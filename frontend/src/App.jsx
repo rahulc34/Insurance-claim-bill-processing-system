@@ -11,6 +11,7 @@ function App() {
 
   const handleChange = (e) => {
     const { name, files: selectedFiles } = e.target;
+    console.log(e.target)
     setFiles((prev) => ({
       ...prev,
       [name]: selectedFiles[0],
@@ -27,9 +28,10 @@ function App() {
     formData.append("page1", files.page1);
     formData.append("page2", files.page2);
     formData.append("page3", files.page3);
+    console.log(formData)
 
     try {
-      const res = await axios.post("http://localhost:3000/upload", formData, {
+      const res = await axios.post("http://localhost:3000/api/v1/upload/getjson", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 
